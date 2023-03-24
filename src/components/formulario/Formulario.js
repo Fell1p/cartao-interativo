@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Formulario.css"
 
 const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc }) => {
   return (
@@ -14,7 +15,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc }) => {
           />
           <p>Numero do Cartão</p>
         </label>
-        <label htmlFor="numeroCartao">
+        <label htmlFor="numeroCartao" className='numeroCartao'>
           <input
             type="number"
             name='numeroCartao'

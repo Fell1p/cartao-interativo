@@ -8,13 +8,12 @@ const Card = ({ nome, numeroCard, mes, ano, cvc }) => {
 
   return (
     <div>
-      <p>{cartaoInfos(nome)}</p>
-      <p>{cartaoInfos(numeroCard)}</p>
-      <p>{cartaoInfos(mes)}/{cartaoInfos(ano)}</p>
-      <p>{cartaoInfos(cvc)}</p>
+      {nome ? (<p>{cartaoInfos(nome)}</p>) : (<p>Nome Sobrenome</p>)}
+      {numeroCard ? (<p>{cartaoInfos(numeroCard)}</p>) : (<p>0000 0000 0000 0000</p>)}
+      {<p>{cartaoInfos(mes)}/{cartaoInfos(ano)}</p>}
+      {<p>{cartaoInfos(cvc)}</p>}
     </div>
   )
 }
 
 export default Card
-
