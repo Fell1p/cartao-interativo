@@ -15,22 +15,22 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-      <Formulario 
-        setNome={setNome}
-        setNumeroCard={setNumeroCard}
-        setMes={setMes}
-        setAno={setAno}
-        setCvc={setCvc}
-      />
-     </div>
-     <div>
+     <div className='app-card-style'>
       <Card 
         nome={nome}
         numeroCard={numeroCard}
         mes={mes}
         ano={ano}
         cvc={cvc}
+      />
+     </div>
+     <div className='app-form-style'>
+      <Formulario 
+        setNome={setNome}
+        setNumeroCard={setNumeroCard}
+        setMes={setMes}
+        setAno={setAno}
+        setCvc={setCvc}
       />
      </div>
     </div>

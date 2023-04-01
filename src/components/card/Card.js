@@ -1,4 +1,5 @@
 import React from 'react'
+import './Card.css'
 
 const Card = ({ nome, numeroCard, mes, ano, cvc }) => {
 
@@ -10,8 +11,11 @@ const Card = ({ nome, numeroCard, mes, ano, cvc }) => {
     <div>
       {nome ? (<p>{cartaoInfos(nome)}</p>) : (<p>Nome Sobrenome</p>)}
       {numeroCard ? (<p>{cartaoInfos(numeroCard)}</p>) : (<p>0000 0000 0000 0000</p>)}
-      {<p>{cartaoInfos(mes)}/{cartaoInfos(ano)}</p>}
-      {<p>{cartaoInfos(cvc)}</p>}
+      <div className='card-validade-style' >
+        {mes ? (<p>{cartaoInfos(mes)}/</p>) : (<p>00</p>)}
+        {ano ? (<p>{cartaoInfos(ano)}</p>) : (<p>00</p>)}
+      </div>
+      {cvc ? (<p>{cartaoInfos(cvc)}</p>) : (<p>000</p>)}
     </div>
   )
 }

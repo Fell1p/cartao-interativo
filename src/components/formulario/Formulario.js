@@ -3,20 +3,22 @@ import "./Formulario.css"
 
 const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc }) => {
   return (
-    <div>
+    <div className='form-style' >
       <form>
         <p>Nome do Titular</p>
         <label htmlFor="nome">
-          <input 
+          <input
+            className='form-name-style' 
             type="text"
             name="nome"
             placeholder="ex. Vander Jando"
             onChange={(e) => setNome(e.target.value)}
-          />
-          <p>Numero do Cartão</p>
+          />          
         </label>
+        <p>Numero do Cartão</p>
         <label htmlFor="numeroCartao" className='numeroCartao'>
           <input
+            className='numeroCartao-style'
             type="number"
             name='numeroCartao'
             placeholder="ex. 0000 0000 0000 0000"
@@ -26,12 +28,14 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc }) => {
         <p>Validade</p>
         <label htmlFor="validade">
           <input 
+            className='mm-style'
             type="number"
             name='validade'
             placeholder="MM"
             onChange={(e) => setMes(e.target.value)}
           />
           <input 
+            className='yy-style'
             type="number"
             placeholder="YY"
             onChange={(e) => setAno(e.target.value)}

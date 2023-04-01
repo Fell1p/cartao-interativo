@@ -3,3 +3,32 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+p{
+  margin-bottom: 1%;
+  margin-top: 8%;
+}
+
+.form-style{
+  border-width: 3px;
+  border-color: black;
+  border-style: solid;
+  margin-top: 5%;
+  padding: 5%;
+}
+
+.form-name-style{
+  border-color: none;
+}
+
+.numeroCartao-style{
+  border-color: none;
+}
+
+.mm-style{
+  width: 7%;
+}
+
+.yy-style{
+  width: 7%;
+}
