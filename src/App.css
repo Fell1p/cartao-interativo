@@ -9,7 +9,15 @@
 .app-card-style{
   background-color: aqua;
   height: 100%;
+  width: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.app-form-style{
+  height: 100%;
+  width: 75%;
+  display: flex;
+  justify-content: center;
 }
