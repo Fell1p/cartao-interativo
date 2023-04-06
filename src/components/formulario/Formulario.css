@@ -4,13 +4,19 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.form-container{
+  display: flex;
+  align-items: center;
+}
+
 p{
   margin-bottom: 1%;
   margin-top: 8%;
 }
 
-.form-style{
-  width: 100%;
+form{
+  width: 40%;
+  margin:  0 auto; 
 }
 
 .form-name-style{
@@ -36,13 +42,19 @@ p{
 }
 
 .container-validade-cvc{
+  align-content: center;
   display: flex;
 }
 
 .mm-style{
   width: 7%;
+  margin-right: 5px;
 }
 
 .yy-style{
   width: 7%;
+}
+
+.cvc-style{
+  width: 26%;
 }

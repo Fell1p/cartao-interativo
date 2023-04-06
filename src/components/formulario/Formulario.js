@@ -3,7 +3,7 @@ import "./Formulario.css"
 
 const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc }) => {
   return (
-    <div className='form-style' >
+    <div className='form-container'>
       <form>
         <p>Nome do Titular</p>
         <label htmlFor="nome">
