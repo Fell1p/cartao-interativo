@@ -5,26 +5,28 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc }) => {
   return (
     <div className='form-container'>
       <form>
-        <p>Nome do Titular</p>
-        <label htmlFor="nome">
-          <input
-            className='form-name-style' 
-            type="text"
-            name="nome"
-            placeholder="ex. Vander Jando"
-            onChange={(e) => setNome(e.target.value)}
-          />          
-        </label>
-        <p>Numero do Cartão</p>
-        <label htmlFor="numeroCartao" className='numeroCartao'>
-          <input
-            className='numeroCartao-style'
-            type="number"
-            name='numeroCartao'
-            placeholder="ex. 0000 0000 0000 0000"
-            onChange={(e) => setNumeroCard(e.target.value)}
-          />
-        </label>
+        <div className='form-style' >
+          <p>Nome do Titular</p>
+          <label htmlFor="nome">
+            <input          
+              type="text"
+              name="nome"
+              placeholder="ex. Vander Jando"
+              onChange={(e) => setNome(e.target.value)}
+            />          
+          </label>
+        </div>
+        <div className='form-style' > 
+          <p>Numero do Cartão</p>
+          <label htmlFor="numeroCartao">
+            <input              
+              type="number"
+              name='numeroCartao'
+              placeholder="ex. 0000 0000 0000 0000"
+              onChange={(e) => setNumeroCard(e.target.value)}
+            />
+          </label>
+        </div>
         <div className='container-validade-cvc' >
           <div className='slyte-validade-container'>
               <p>Validade</p>
@@ -58,6 +60,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc }) => {
             </label>
           </div>
         </div>
+        <button>Enviar</button>
       </form>
     </div>
   )
