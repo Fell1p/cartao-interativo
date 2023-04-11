@@ -1,3 +1,41 @@
+.card-style-container{
+    background-color: #dcbf52;
+background-image: linear-gradient(33deg, #dcbf52 0%, #F76B1C 100%);
+    border-radius: 5px;
+    height: 200px;
+    width: 400px;
+    position: absolute;
+    top: 225px;
+    left: 140px;
+    padding: 15px;
+}
+
+.bandeira-style-continer{
+    width: 100%;
+    display: flex;
+}
+
+.bandeiraSolida-style{
+    background: lightblue;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.bandeiraTransparente-style{
+    background-color: none;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin-top: 7px;
+    margin-left: 8px;
+}
+
+.style-numero-card {
+    font-size: 30px;
+}
+
 .card-validade-style{
     display: flex;
     width: 100%;

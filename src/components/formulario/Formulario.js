@@ -1,4 +1,5 @@
 import React from 'react'
+import { IMaskInput } from 'react-imask'
 import "./Formulario.css"
 
 const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc }) => {
@@ -19,8 +20,8 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc }) => {
         <div className='form-style' > 
           <p>Numero do Cartão</p>
           <label htmlFor="numeroCartao">
-            <input              
-              type="number"
+            <IMaskInput
+              mask="0000 0000 0000 0000"
               name='numeroCartao'
               placeholder="ex. 0000 0000 0000 0000"
               onChange={(e) => setNumeroCard(e.target.value)}
