@@ -1,13 +1,18 @@
 .card-style-container{
     background-color: #dcbf52;
 background-image: linear-gradient(33deg, #dcbf52 0%, #F76B1C 100%);
-    border-radius: 5px;
+    border-radius: 8px;
     height: 200px;
-    width: 400px;
+    width: 330px;
     position: absolute;
     top: 225px;
-    left: 140px;
+    left: 120px;
     padding: 15px;
+    font-family: 'Rajdhani', sans-serif;   
+    font-weight: 500;
+    color: silver;
+    text-shadow: 1px 1px 3px rgba(95, 94, 94, 0.5);
+    box-sizing: border-box;
 }
 
 .bandeira-style-continer{
@@ -33,7 +38,15 @@ background-image: linear-gradient(33deg, #dcbf52 0%, #F76B1C 100%);
 }
 
 .style-numero-card {
-    font-size: 30px;
+    font-size: 1.4em;
+    letter-spacing: 2px;
+    margin: 0 auto;
+}
+
+.styles-nome-card{
+    text-transform: uppercase;
+    font-size: 0.9em;
+    margin: 0 auto;
 }
 
 .card-validade-style{
