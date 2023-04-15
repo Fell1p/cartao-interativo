@@ -3,9 +3,17 @@ import { IMaskInput } from 'react-imask'
 import "./Formulario.css"
 
 const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc }) => {
+
+const formEnvio = (e) => {
+  e.preventDefault();
+  console.log("Formulario enviado!")
+}
+
+
+
   return (
     <div className='form-container'>
-      <form>
+      <form onSubmit={formEnvio}>
         <div className='form-style' >
           <p>Nome do Titular</p>
           <label htmlFor="nome">
@@ -14,6 +22,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc }) => {
               name="nome"
               placeholder="ex. Vander Jando"
               onChange={(e) => setNome(e.target.value)}
+              required
             />          
           </label>
         </div>
@@ -25,6 +34,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc }) => {
               name='numeroCartao'
               placeholder="ex. 0000 0000 0000 0000"
               onChange={(e) => setNumeroCard(e.target.value)}
+              required
             />
           </label>
         </div>
@@ -32,36 +42,39 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc }) => {
           <div className='slyte-validade-container'>
               <p>Validade</p>
               <label htmlFor="validade">
-                <input 
+                <IMaskInput 
                   className='mm-style'
-                  type="number"
+                  mask="00"
                   name='validade'
                   placeholder="MM"
                   onChange={(e) => setMes(e.target.value)}
+                  required
                 />            
-                <input 
+                <IMaskInput
                   className='yy-style'
-                  type="number"
+                  mask="00"
                   placeholder="YY"
                   onChange={(e) => setAno(e.target.value)}
+                  required
                 />
               </label>
           </div>
           <div className='style-cvc-container' >
             <p>CVC</p>
             <label htmlFor="seguranca">
-              <input 
+              <IMaskInput
                 className='cvc-style'
-                type="number" 
+                mask="000"
                 name='seguranca'
                 cvc="cvc"
                 placeholder='ex. 000'
                 onChange={(e) => setCvc(e.target.value)}
+                required
               />
             </label>
           </div>
         </div>
-        <button>Enviar</button>
+        <button type='submit'>Enviar</button>
       </form>
     </div>
   )
