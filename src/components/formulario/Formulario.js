@@ -10,7 +10,6 @@ const formEnvio = (e) => {
 }
 
 
-
   return (
     <div className='form-container'>
       <form onSubmit={formEnvio}>
@@ -69,7 +68,7 @@ const formEnvio = (e) => {
                 cvc="cvc"
                 placeholder='ex. 000'
                 onChange={(e) => setCvc(e.target.value)}
-                required
+                required              
               />
             </label>
           </div>
