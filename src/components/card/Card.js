@@ -1,21 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Card.css'
 
-const Card = ({ nome, numeroCard, mes, ano, cvc }) => {
+const Card = ({ nome, numeroCard, mes, ano, cvc, clicando }) => {
 
     function cartaoInfos(cardNome, cardNumero, cardMes, cardAno, cardCVC) {
         return `${cardNome || cardNumero || cardMes || cardAno || cardCVC}`
     }
 
-    const virarCartao = () => {
-      const flipContainer = document.querySelector(".flip-container")
+    useEffect(() => {
       const flipper = document.querySelector(".flipper")
+    
+      if(clicando !== false){
+        flipper.classList.add("giro")
+      }
+      
+      if (clicando !== true){
+        flipper.classList.remove("giro")
+      }
 
-      flipContainer.classList.add("giro")
-      flipper.classList.add("giro")
-
-      console.log("a função foi chamada")
-    }
+    }, [clicando])
 
   return (
     <div className='flip-container'>
@@ -40,7 +43,7 @@ const Card = ({ nome, numeroCard, mes, ano, cvc }) => {
           </div>
           <div className='back'>            
             <div className='tarja-style'></div>
-            <div className='style-cvc-card' >
+            <div className='style-cvc-card'>
                 {cvc ? (<p className='cvc'>{cartaoInfos(cvc)}</p>) : (<p className='cvc'>000</p>)}
             </div>
             <span>

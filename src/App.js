@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import './App.css';
-import Card from './components/card/Card';
 
 // Components
 import Formulario from './components/formulario/Formulario'
+import Card from './components/card/Card';
 
 function App() {
 
@@ -12,6 +12,8 @@ function App() {
   const [mes, setMes] = useState("00")
   const [ano, setAno] = useState("00")
   const [cvc, setCvc] = useState("000")
+
+  const [clicando] = useState(false)
  
   return (
     <div className="App">
@@ -22,6 +24,7 @@ function App() {
         mes={mes}
         ano={ano}
         cvc={cvc}
+        clicando={clicando}
       />
      </div>
      <div className='app-form-style'>
@@ -31,6 +34,7 @@ function App() {
         setMes={setMes}
         setAno={setAno}
         setCvc={setCvc}
+        clicando={clicando}
       />
      </div>
     </div>

@@ -18,13 +18,11 @@
     left: 100px; 
 }
       
-  
 .front, .back {  	
     backface-visibility: hidden;    	
     position: fixed;   	
     top: 200px;
 }
-      
   
 .front { z-index: 2;  }    
   
