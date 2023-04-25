@@ -9,16 +9,16 @@ const Card = ({ nome, numeroCard, mes, ano, cvc, clicando }) => {
 
     useEffect(() => {
       const flipper = document.querySelector(".flipper")
-    
-      if(clicando !== false){
+      console.log(clicando)
+      if(cvc !== '000'){
         flipper.classList.add("giro")
       }
-      
-      if (clicando !== true){
-        flipper.classList.remove("giro")
-      }
 
-    }, [clicando])
+      if(cvc !== '000' && clicando){
+        flipper.classList.remove("giro")
+      }      
+
+    }, [cvc, clicando])
 
   return (
     <div className='flip-container'>

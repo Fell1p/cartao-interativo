@@ -2,20 +2,23 @@ import React from 'react'
 import { IMaskInput } from 'react-imask'
 import "./Formulario.css"
 
-const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, clicando }) => {
+const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicando }) => {
 
   const formEnvio = (e) => {
     e.preventDefault();
     console.log("Formulario enviado!")
   }
 
-  const clicou = () =>{
-    clicando = true;
+  const cliqueTrue = () => {
+        setClicando(true)
+        console.log('função cliqueTrue chamada' + setClicando)       
+  } 
+
+  const cliqueFalse = () => {
+    setClicando(false)
+    console.log('função cliqueFalse chamada' + setClicando)    
   }
 
-  const desclicou = () => {
-    clicando = false;
-  }
 
   return (
     <div className='form-container'>
@@ -29,7 +32,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, clicando }
               placeholder="ex. Vander Jando"
               onChange={(e) => setNome(e.target.value)}
               required
-              onClick={desclicou}
+              onClick={cliqueTrue}
             />          
           </label>
         </div>
@@ -42,7 +45,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, clicando }
               placeholder="ex. 0000 0000 0000 0000"
               onChange={(e) => setNumeroCard(e.target.value)}
               required
-              onClick={desclicou}
+              onClick={cliqueTrue}
             />
           </label>
         </div>
@@ -57,7 +60,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, clicando }
                   placeholder="MM"
                   onChange={(e) => setMes(e.target.value)}
                   required
-                  onClick={desclicou}
+                  onClick={cliqueTrue}
                 />            
                 <IMaskInput
                   className='yy-style'
@@ -65,7 +68,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, clicando }
                   placeholder="YY"
                   onChange={(e) => setAno(e.target.value)}
                   required
-                  onClick={desclicou}
+                  onClick={cliqueTrue}
                 />
               </label>
           </div>
@@ -80,7 +83,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, clicando }
                 placeholder='ex. 000'
                 onChange={(e) => setCvc(e.target.value)}
                 required
-                onClick={clicou}
+                onClick={cliqueFalse}
               />
             </label>
           </div>

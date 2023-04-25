@@ -13,7 +13,7 @@ function App() {
   const [ano, setAno] = useState("00")
   const [cvc, setCvc] = useState("000")
 
-  const [clicando] = useState(false)
+  const [clicando, setClicando] = useState(false)
  
   return (
     <div className="App">
@@ -34,7 +34,7 @@ function App() {
         setMes={setMes}
         setAno={setAno}
         setCvc={setCvc}
-        clicando={clicando}
+        setClicando={setClicando}
       />
      </div>
     </div>
