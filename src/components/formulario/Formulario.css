@@ -11,27 +11,45 @@ input{
   width: 100%;
 }
 
+input:focus{
+  outline: none;
+}
+
 form{
   width: 50%;
   margin:  0 auto; 
   color: #308b7d;
   font-weight: bold;
+  max-width: 390px;
 }
 
 button{
-  background-color: #319182;
+  background-color: #001219;
+background-image: linear-gradient(270deg, #001219 0%, #005f73 33%, #0a9396 66%, #94d2bd 100%);
+  background-size: 300% 300%;
   height: 30px;
   width: 102%;
   margin-top: 16px;
   border-radius: 4px;
   color: rgb(245, 245, 245);
   border: 0;
-  transition: 1s;
 }
 
 button:hover{
   cursor: pointer;
-  transform: scale(1.1);
+  animation: colors 1s ease normal;
+}
+
+@keyframes colors {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .form-container{
@@ -60,7 +78,7 @@ button:hover{
 }
 
 .slyte-validade-container{
-  width: 30%;
+  width: 50%;
 }
 
 .mm-style{

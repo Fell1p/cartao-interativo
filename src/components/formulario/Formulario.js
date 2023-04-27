@@ -29,8 +29,9 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
             <input          
               type="text"
               name="nome"
-              placeholder="ex. Vander Jando"
+              placeholder="ex. Vander R Jando"
               onChange={(e) => setNome(e.target.value)}
+              maxLength={19}
               required
               onClick={cliqueTrue}
             />          

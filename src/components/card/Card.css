@@ -1,6 +1,8 @@
 /*Efeito Flip*/
 
-.flip-container { perspective: 1000; }
+.flip-container { 
+    perspective: 1000;
+}
 
 .giro {  		
     transform: rotateY(180deg);  	
@@ -21,7 +23,7 @@
 .front, .back {  	
     backface-visibility: hidden;    	
     position: fixed;   	
-    top: 200px;
+    top: 320px;
 }
   
 .front { z-index: 2;  }    
@@ -32,8 +34,8 @@
 /*Frente do cartão*/
 
 .front{
-    background-color: #308b7d;
-    background-image: linear-gradient(90deg, #308b7d 0%, #6980e4 100%);
+    background-color: #005f73;
+background-image: linear-gradient(270deg, #005f73 0%, #608778 100%);
     border-radius: 8px;
     height: 200px;
     width: 350px;
