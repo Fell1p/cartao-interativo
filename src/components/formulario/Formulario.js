@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IMaskInput } from 'react-imask'
 import "./Formulario.css"
+import Verificado from '../../Imgs/verificado.png'
 
 const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicando }) => {
 
@@ -10,15 +11,29 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
   }
 
   const cliqueTrue = () => {
-        setClicando(true)
-        console.log('função cliqueTrue chamada' + setClicando)       
+        setClicando(true) 
   } 
 
   const cliqueFalse = () => {
-    setClicando(false)
-    console.log('função cliqueFalse chamada' + setClicando)    
+    setClicando(false)  
   }
 
+  //const [sucesso, setSucesso] = useState(false)
+
+
+  /*useEffect(() => {
+    const enviado = document.querySelector(".enviado-sucesso")
+    if(sucesso !== false){
+      enviado.classList.add("enviado-sucesso")
+      enviado.classList.remove(form)
+    }
+
+    if(sucesso !== true){
+      enviado.classList.remove("enviado-sucesso")
+      enviado.classList.add(form)
+    }      
+
+  }, [sucesso])*/
 
   return (
     <div className='form-container'>
@@ -33,7 +48,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
               onChange={(e) => setNome(e.target.value)}
               maxLength={19}
               required
-              onClick={cliqueTrue}
+              onFocus={cliqueTrue}
             />          
           </label>
         </div>
@@ -46,7 +61,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
               placeholder="ex. 0000 0000 0000 0000"
               onChange={(e) => setNumeroCard(e.target.value)}
               required
-              onClick={cliqueTrue}
+              onFocus={cliqueTrue}
             />
           </label>
         </div>
@@ -61,7 +76,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
                   placeholder="MM"
                   onChange={(e) => setMes(e.target.value)}
                   required
-                  onClick={cliqueTrue}
+                  onFocus={cliqueTrue}
                 />            
                 <IMaskInput
                   className='yy-style'
@@ -69,7 +84,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
                   placeholder="YY"
                   onChange={(e) => setAno(e.target.value)}
                   required
-                  onClick={cliqueTrue}
+                  onFocus={cliqueTrue}
                 />
               </label>
           </div>
@@ -84,13 +99,16 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
                 placeholder='ex. 000'
                 onChange={(e) => setCvc(e.target.value)}
                 required
-                onClick={cliqueFalse}
+                onFocus={cliqueFalse}
               />
             </label>
           </div>
         </div>
         <button type='submit'>Enviar</button>
       </form>
+      <div className='enviado-sucesso'>
+        <img src={Verificado} />
+      </div>
     </div>
   )
 }
