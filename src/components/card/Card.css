@@ -1,8 +1,6 @@
 /*Efeito Flip*/
 
-.flip-container { 
-    perspective: 1000;
-}
+.flip-container { perspective: 1000 }
 
 .giro {  		
     transform: rotateY(180deg);  	

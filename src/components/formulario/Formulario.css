@@ -1,10 +1,5 @@
-/*Sucesso*/
-
-img{
-  height: 180px;
-}
-
 /*Formulario*/
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -26,7 +21,7 @@ input:focus{
 }
 
 form{
-  width: 50%;
+  width: 100%;
   margin:  0 auto; 
   color: #8b9997;
   max-width: 390px;
@@ -97,4 +92,10 @@ button:hover{
 
 .yy-style{
   width: 40%;
+}
+
+/*Tela de sucesso*/
+
+.img-form-style{
+  height: 180px;
 }

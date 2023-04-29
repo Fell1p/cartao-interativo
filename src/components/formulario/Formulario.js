@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
 import { IMaskInput } from 'react-imask'
 import "./Formulario.css"
-import Verificado from '../../Imgs/verificado.png'
+import Imagem from '../../Imgs/verificado.png'
+import { useState } from 'react'
 
 const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicando }) => {
+
+  const [sucesso, setSucesso] = useState(true)
 
   const formEnvio = (e) => {
     e.preventDefault();
@@ -18,97 +20,86 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
     setClicando(false)  
   }
 
-  //const [sucesso, setSucesso] = useState(false)
-
-
-  /*useEffect(() => {
-    const enviado = document.querySelector(".enviado-sucesso")
-    if(sucesso !== false){
-      enviado.classList.add("enviado-sucesso")
-      enviado.classList.remove(form)
-    }
-
-    if(sucesso !== true){
-      enviado.classList.remove("enviado-sucesso")
-      enviado.classList.add(form)
-    }      
-
-  }, [sucesso])*/
-
   return (
-    <div className='form-container'>
-      <form onSubmit={formEnvio}>
-        <div className='form-style' >
-          <p>Nome do Titular</p>
-          <label htmlFor="nome">
-            <input          
-              type="text"
-              name="nome"
-              placeholder="ex. Vander R Jando"
-              onChange={(e) => setNome(e.target.value)}
-              maxLength={19}
-              required
-              onFocus={cliqueTrue}
-            />          
-          </label>
-        </div>
-        <div className='form-style' > 
-          <p>Numero do Cartão</p>
-          <label htmlFor="numeroCartao">
-            <IMaskInput
-              mask="0000 0000 0000 0000"
-              name='numeroCartao'
-              placeholder="ex. 0000 0000 0000 0000"
-              onChange={(e) => setNumeroCard(e.target.value)}
-              required
-              onFocus={cliqueTrue}
-            />
-          </label>
-        </div>
-        <div className='container-validade-cvc' >
-          <div className='slyte-validade-container'>
-              <p>Validade</p>
-              <label htmlFor="validade">
-                <IMaskInput 
-                  className='mm-style'
-                  mask="00"
-                  name='validade'
-                  placeholder="MM"
-                  onChange={(e) => setMes(e.target.value)}
-                  required
-                  onFocus={cliqueTrue}
-                />            
-                <IMaskInput
-                  className='yy-style'
-                  mask="00"
-                  placeholder="YY"
-                  onChange={(e) => setAno(e.target.value)}
-                  required
-                  onFocus={cliqueTrue}
-                />
-              </label>
-          </div>
-          <div className='style-cvc-container' >
-            <p>CVC</p>
-            <label htmlFor="seguranca">
-              <IMaskInput
-                className='cvc-style'
-                mask="000"
-                name='seguranca'
-                cvc="cvc"
-                placeholder='ex. 000'
-                onChange={(e) => setCvc(e.target.value)}
+    <div>
+      {sucesso && (
+      <div className='form-container'>
+        <form onSubmit={formEnvio}>
+          <div className='form-style' >
+            <p>Nome do Titular</p>
+            <label htmlFor="nome">
+              <input          
+                type="text"
+                name="nome"
+                placeholder="ex. Vander R Jando"
+                onChange={(e) => setNome(e.target.value)}
+                maxLength={19}
                 required
-                onFocus={cliqueFalse}
+                onFocus={cliqueTrue}
+              />          
+            </label>
+          </div>
+          <div className='form-style' > 
+            <p>Numero do Cartão</p>
+            <label htmlFor="numeroCartao">
+              <IMaskInput
+                mask="0000 0000 0000 0000"
+                name='numeroCartao'
+                placeholder="ex. 0000 0000 0000 0000"
+                onChange={(e) => setNumeroCard(e.target.value)}
+                required
+                onFocus={cliqueTrue}
               />
             </label>
           </div>
-        </div>
-        <button type='submit'>Enviar</button>
-      </form>
-      <div className='enviado-sucesso'>
-        <img src={Verificado} />
+          <div className='container-validade-cvc' >
+            <div className='slyte-validade-container'>
+                <p>Validade</p>
+                <label htmlFor="validade">
+                  <IMaskInput 
+                    className='mm-style'
+                    mask="00"
+                    name='validade'
+                    placeholder="MM"
+                    onChange={(e) => setMes(e.target.value)}
+                    required
+                    onFocus={cliqueTrue}
+                  />            
+                  <IMaskInput
+                    className='yy-style'
+                    mask="00"
+                    placeholder="YY"
+                    onChange={(e) => setAno(e.target.value)}
+                    required
+                    onFocus={cliqueTrue}
+                  />
+                </label>
+            </div>
+            <div className='style-cvc-container' >
+              <p>CVC</p>
+              <label htmlFor="seguranca">
+                <IMaskInput
+                  className='cvc-style'
+                  mask="000"
+                  name='seguranca'
+                  cvc="cvc"
+                  placeholder='ex. 000'
+                  onChange={(e) => setCvc(e.target.value)}
+                  required
+                  onFocus={cliqueFalse}
+                />
+              </label>
+            </div>
+          </div>
+          <button type='submit' onClick={() => setSucesso(false)}>Enviar</button>
+        </form>
       </div>
+      )}
+      {!sucesso && (
+        <div className='success-style'>
+        <img src={Imagem} className='img-form-style' alt='' />
+      </div>
+      )}
     </div>
   )
 }
