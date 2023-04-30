@@ -6,7 +6,7 @@
     transform: rotateY(180deg);  	
 }    
 
-.flip-container, .front, .back {  	
+.flip-container, .flipper, .front, .back {  	
     width: 320px;  	
     height: 480px;  
 }
@@ -21,7 +21,8 @@
 .front, .back {  	
     backface-visibility: hidden;    	
     position: fixed;   	
-    top: 320px;
+    top: 315px;
+    box-shadow: 4px 4px 5px rgba(22, 21, 21, 0.5);
 }
   
 .front { z-index: 2;  }    

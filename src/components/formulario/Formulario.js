@@ -7,11 +7,6 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
 
   const [sucesso, setSucesso] = useState(true)
 
-  const formEnvio = (e) => {
-    e.preventDefault();
-    console.log("Formulario enviado!")
-  }
-
   const cliqueTrue = () => {
         setClicando(true) 
   } 
@@ -24,7 +19,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
     <div>
       {sucesso && (
       <div className='form-container'>
-        <form onSubmit={formEnvio}>
+        <form onSubmit={() => setSucesso(false)}>
           <div className='form-style' >
             <p>Nome do Titular</p>
             <label htmlFor="nome">
@@ -91,13 +86,15 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
               </label>
             </div>
           </div>
-          <button type='submit' onClick={() => setSucesso(false)}>Enviar</button>
+          <button type='submit'>Enviar</button>
         </form>
       </div>
       )}
       {!sucesso && (
         <div className='success-style'>
         <img src={Imagem} className='img-form-style' alt='' />
+        <p className='msg-success'>Cartão Cadastrado com sucesso!</p>
+        <button onClick={() => setSucesso(true)}>Cadastrar novo cartão</button>
       </div>
       )}
     </div>

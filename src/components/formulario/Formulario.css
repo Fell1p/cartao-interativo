@@ -96,6 +96,24 @@ button:hover{
 
 /*Tela de sucesso*/
 
+.success-style{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
 .img-form-style{
   height: 180px;
+  width: 180px;
+  margin-left: 41px;
+}
+
+.msg-success{
+  color: #59726e;
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 100%;
+  right: 100%;
 }
