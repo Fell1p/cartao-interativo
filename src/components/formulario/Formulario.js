@@ -15,6 +15,10 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
     setClicando(false)  
   }
 
+  const recarregarPag = () => {
+    window.location.reload(true);
+  }
+
   return (
     <div>
       {sucesso && (
@@ -94,7 +98,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
         <div className='success-style'>
         <img src={Imagem} className='img-form-style' alt='' />
         <p className='msg-success'>Cartão Cadastrado com sucesso!</p>
-        <button onClick={() => setSucesso(true)}>Cadastrar novo cartão</button>
+        <button onClick={recarregarPag}>Cadastrar novo cartão</button>
       </div>
       )}
     </div>
