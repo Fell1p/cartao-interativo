@@ -22,7 +22,7 @@ background-image: linear-gradient(0deg, #14213d 0%, #767474 100%);
 
 /*Responsividade*/
 
-@media (max-width: 800px)
+@media (max-width: 550px)
 {
   .app-card-style
    {

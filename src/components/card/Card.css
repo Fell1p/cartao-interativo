@@ -139,6 +139,13 @@ span{
 
 /*Responsividade*/
 
+@media(max-width: 1020px){
+    .flipper
+    {
+        top: 60px;
+    }
+}
+
 @media (min-height: 400px) and (max-height: 780px)
 {
   .flipper
@@ -157,4 +164,15 @@ span{
     right: 2px;
    }
    
+}
+
+@media (max-width: 800px) {
+    .flipper
+    {
+        top: 40%
+    }
+    .flip-container
+    {
+        height: 210px;
+    }
 }

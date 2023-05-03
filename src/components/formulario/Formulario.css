@@ -125,5 +125,6 @@ button:hover{
   .form-container
    {
     width: 350px;
+    margin-bottom: 30px;
    }
 }
