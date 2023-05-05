@@ -47,6 +47,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
                 placeholder="ex. 0000 0000 0000 0000"
                 onChange={(e) => setNumeroCard(e.target.value)}
                 required
+                minLength={16}
                 onFocus={cliqueTrue}
               />
             </label>
@@ -63,7 +64,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
                     onChange={(e) => setMes(e.target.value)}
                     required
                     onFocus={cliqueTrue}
-                  />            
+                  />
                   <IMaskInput
                     className='yy-style'
                     mask="00"
@@ -86,6 +87,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
                   onChange={(e) => setCvc(e.target.value)}
                   required
                   onFocus={cliqueFalse}
+                  minLength={3}
                 />
               </label>
             </div>
