@@ -30,7 +30,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
               <input          
                 type="text"
                 name="nome"
-                placeholder="ex. Vander R Jando"
+                placeholder="ex. Nome Sobrenome"
                 onChange={(e) => setNome(e.target.value)}
                 maxLength={19}
                 required
