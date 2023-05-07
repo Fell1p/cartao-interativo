@@ -5,10 +5,32 @@ import { useState } from 'react'
 
 const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicando }) => {
 
-  const [sucesso, setSucesso] = useState(true)
+  const [sucesso, setSucesso] = useState(false)
 
+  const [mes, setMes2] = useState(0)
+  const [ano, setAno2] = useState(0)
+
+  const validacao = () => {
+    console.log(sucesso)
+    if (mes > 12 || ano < 23){
+      window.alert('Validade incorreta')
+    } else {
+      setSucesso(true)
+    }
+  }
+
+  const monitoraMes = (e) => {
+    setMes(e.target.value)
+    setMes2(e.target.value)
+  }
+
+  const monitoraAno = (e) => {
+    setAno(e.target.value)
+    setAno2(e.target.value)
+  }
+  
   const cliqueTrue = () => {
-        setClicando(true) 
+    setClicando(true) 
   } 
 
   const cliqueFalse = () => {
@@ -21,9 +43,9 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
 
   return (
     <div>
-      {sucesso && (
+      {!sucesso && (
       <div className='form-container'>
-        <form onSubmit={() => setSucesso(false)}>
+        <form onSubmit={validacao}>
           <div className='form-style' >
             <p>Nome do Titular</p>
             <label htmlFor="nome">
@@ -61,7 +83,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
                     mask="00"
                     name='validade'
                     placeholder="MM"
-                    onChange={(e) => setMes(e.target.value)}
+                    onChange={monitoraMes}                    
                     required
                     onFocus={cliqueTrue}
                   />
@@ -69,11 +91,12 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
                     className='yy-style'
                     mask="00"
                     placeholder="YY"
-                    onChange={(e) => setAno(e.target.value)}
+                    onChange={monitoraAno}
                     required
                     onFocus={cliqueTrue}
                   />
                 </label>
+                {}
             </div>
             <div className='style-cvc-container' >
               <p>CVC</p>
@@ -96,7 +119,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
         </form>
       </div>
       )}
-      {!sucesso && (
+      {sucesso && (
         <div className='success-style'>
         <img src={Imagem} className='img-form-style' alt='' />
         <p className='msg-success'>Cartão Cadastrado com sucesso!</p>

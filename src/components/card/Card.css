@@ -176,3 +176,11 @@ span{
         height: 210px;
     }
 }
+
+@media (max-width: 600px) {
+    .flipper
+    {
+        top: 20%;
+    }
+
+}

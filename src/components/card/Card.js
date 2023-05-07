@@ -9,7 +9,6 @@ const Card = ({ nome, numeroCard, mes, ano, cvc, clicando }) => {
 
     useEffect(() => {
       const flipper = document.querySelector(".flipper")
-      console.log(clicando)
       if(cvc !== '000'){
         flipper.classList.add("giro")
       }
