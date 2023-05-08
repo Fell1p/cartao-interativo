@@ -6,32 +6,37 @@ import { useState } from 'react'
 const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicando }) => {
 
   const [sucesso, setSucesso] = useState(false)
+  const [mes, setMes2] = useState(undefined)
+  const [ano, setAno2] = useState(undefined)
+  const [validacao, setValidacao] = useState(false)
 
-  const [mes, setMes2] = useState(0)
-  const [ano, setAno2] = useState(0)
+  const enviado = () => {    
+    setSucesso(true)    
+  }
 
-  const validacao = () => {
-    console.log(sucesso)
-    if (mes > 12 || ano < 23){
-      window.alert('Validade incorreta')
-    } else {
-      setSucesso(true)
-    }
+  const cliqueTrue = () => {
+    setClicando(true) 
   }
 
   const monitoraMes = (e) => {
     setMes(e.target.value)
     setMes2(e.target.value)
+    if(mes > 12){
+      setValidacao(false);
+    }else {
+      setValidacao(true);
+    }
   }
 
   const monitoraAno = (e) => {
     setAno(e.target.value)
     setAno2(e.target.value)
+    if (ano < 23){
+      setValidacao(false);
+    }else {
+      setValidacao(true);
+    }
   }
-  
-  const cliqueTrue = () => {
-    setClicando(true) 
-  } 
 
   const cliqueFalse = () => {
     setClicando(false)  
@@ -45,7 +50,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
     <div>
       {!sucesso && (
       <div className='form-container'>
-        <form onSubmit={validacao}>
+        <form onSubmit={enviado}>
           <div className='form-style' >
             <p>Nome do Titular</p>
             <label htmlFor="nome">
@@ -83,7 +88,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
                     mask="00"
                     name='validade'
                     placeholder="MM"
-                    onChange={monitoraMes}                    
+                    onChange={monitoraMes}                   
                     required
                     onFocus={cliqueTrue}
                   />
@@ -115,7 +120,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
               </label>
             </div>
           </div>
-          <button type='submit'>Enviar</button>
+          {!validacao ? (<button disabled type='submit'>Enviar</button>) : (<p>Data invalida</p>)}
         </form>
       </div>
       )}
