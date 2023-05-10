@@ -18,6 +18,8 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
     setClicando(true) 
   }
 
+  
+
   const monitoraMes = (e) => {
     setMes(e.target.value)
     setMes2(e.target.value)
@@ -101,7 +103,6 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
                     onFocus={cliqueTrue}
                   />
                 </label>
-                {}
             </div>
             <div className='style-cvc-container' >
               <p>CVC</p>
@@ -120,7 +121,8 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
               </label>
             </div>
           </div>
-          {!validacao ? (<button disabled type='submit'>Enviar</button>) : (<p>Data invalida</p>)}
+          <button type='submit' className='botaoAnimado'>Enviar</button>
+          {validacao && (<p className='invalidado'>Mes ou ano invalido!</p>)}
         </form>
       </div>
       )}
@@ -128,7 +130,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
         <div className='success-style'>
         <img src={Imagem} className='img-form-style' alt='' />
         <p className='msg-success'>Cartão Cadastrado com sucesso!</p>
-        <button onClick={recarregarPag}>Cadastrar novo cartão</button>
+        <button className='botaoAnimado' onClick={recarregarPag}>Cadastrar novo cartão</button>
       </div>
       )}
     </div>
