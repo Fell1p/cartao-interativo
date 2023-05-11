@@ -6,43 +6,30 @@ import { useState } from 'react'
 const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicando }) => {
 
   const [sucesso, setSucesso] = useState(false)
-  const [mes, setMes2] = useState(undefined)
-  const [ano, setAno2] = useState(undefined)
-  const [validacao, setValidacao] = useState(false)
 
-  const enviado = () => {    
-    setSucesso(true)    
+  const [meses] = useState(['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'])
+
+  const [anos] = useState(['2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030', '2031', '2032', '2033'])
+
+  const enviado = () => {
+    setSucesso(true)
   }
 
   const cliqueTrue = () => {
     setClicando(true) 
   }
 
-  
+   const cliqueFalse = () => {
+    setClicando(false)  
+  }  
 
   const monitoraMes = (e) => {
     setMes(e.target.value)
-    setMes2(e.target.value)
-    if(mes > 12){
-      setValidacao(false);
-    }else {
-      setValidacao(true);
-    }
   }
 
   const monitoraAno = (e) => {
     setAno(e.target.value)
-    setAno2(e.target.value)
-    if (ano < 23){
-      setValidacao(false);
-    }else {
-      setValidacao(true);
-    }
-  }
-
-  const cliqueFalse = () => {
-    setClicando(false)  
-  }
+  } 
 
   const recarregarPag = () => {
     window.location.reload(true);
@@ -85,23 +72,29 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
             <div className='slyte-validade-container'>
                 <p>Validade</p>
                 <label htmlFor="validade">
-                  <IMaskInput 
+                  <select 
                     className='mm-style'
-                    mask="00"
                     name='validade'
                     placeholder="MM"
                     onChange={monitoraMes}                   
                     required
-                    onFocus={cliqueTrue}
-                  />
-                  <IMaskInput
+                    onFocus={cliqueTrue}>
+                    {meses.map((mesesAno, i) => (
+                      <option key={i}>{mesesAno}</option>
+                    ))}
+                  </select>
+                  <select
                     className='yy-style'
                     mask="00"
                     placeholder="YY"
                     onChange={monitoraAno}
                     required
                     onFocus={cliqueTrue}
-                  />
+                  >
+                    {anos.map((anosTodos, i) => (
+                      <option key={i}>{anosTodos}</option>
+                    ))}
+                  </select>
                 </label>
             </div>
             <div className='style-cvc-container' >
@@ -122,7 +115,6 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
             </div>
           </div>
           <button type='submit' className='botaoAnimado'>Enviar</button>
-          {validacao && (<p className='invalidado'>Mes ou ano invalido!</p>)}
         </form>
       </div>
       )}
