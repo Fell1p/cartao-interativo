@@ -36,7 +36,7 @@ const Card = ({ nome, numeroCard, mes, ano, cvc, clicando }) => {
               </div>
               <div className='card-validade-style' >
                 {mes ? (<p>{cartaoInfos(mes)}/</p>) : (<p>00</p>)}
-                {ano ? (<p>{cartaoInfos(ano)}</p>) : (<p>00</p>)}
+                {ano ? (<p>{cartaoInfos(ano)}</p>) : (<p>0000</p>)}
               </div>
             </div>
           </div>

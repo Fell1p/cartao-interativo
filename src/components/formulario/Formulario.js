@@ -60,6 +60,7 @@ const Formulario = ({ setNome, setNumeroCard, setMes, setAno, setCvc, setClicand
               <IMaskInput
                 mask="0000 0000 0000 0000"
                 name='numeroCartao'
+                
                 placeholder="ex. 0000 0000 0000 0000"
                 onChange={(e) => setNumeroCard(e.target.value)}
                 required
