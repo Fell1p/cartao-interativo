@@ -25,7 +25,7 @@ Fixar e ampliar os conhecimentos de:
 
 ## :notebook_with_decorative_cover: Aprendizado
 
-É inerente a construção de um dev o esforço de manipular de maneira prática as funcionalidades das tecnologias que o mesmo se propõe a aprender e neste projeto procurei reunir o máximo de funcionalidades que o React proporciona para que eu alcançasse o objetivo da aplicação. Pude elevar o state compartilhado ao elemento pai comum mais próximo (state lift) para conseguir uma renderização simultânea entre diferentes componentes, utilizar validações HTML para tornar minha aplicação mais coesa e utilizar lógica para renderizar parágrafos condicionais.
+É inerente a construção de um dev o esforço de manipular de maneira prática as funcionalidades das tecnologias que o mesmo se propõe a aprender e neste projeto procurei reunir o máximo de funcionalidades que o React proporciona para que eu alcançasse o objetivo da aplicação. Pude elevar o state compartilhado ao elemento pai comum mais próximo (state lift) para conseguir uma renderização simultânea entre diferentes componentes, utilizar validações HTML para tornar minha aplicação mais coesa e utilizar lógica para renderizar parágrafos condicionais e com isso pude aprimorar minha lógia e manipular todas as ferramentas que me propus a utilizar.
 
 ## Deploy
 
